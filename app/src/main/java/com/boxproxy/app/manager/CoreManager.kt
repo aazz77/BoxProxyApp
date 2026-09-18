@@ -19,7 +19,7 @@ class CoreManager(private val context: Context) {
     private val configsDir: File
         get() = File(context.filesDir, Constants.CONFIGS_DIR).also { it.mkdirs() }
 
-    private val runDir: File
+    val runDir: File
         get() = File(context.filesDir, Constants.RUN_DIR).also { it.mkdirs() }
 
     fun listCores(): List<CoreInfo> {
@@ -154,6 +154,4 @@ class CoreManager(private val context: Context) {
             false
         }
     }
-
-    fun getRunDir(): File = runDir
 }
